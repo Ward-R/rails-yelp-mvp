@@ -1,10 +1,18 @@
-<div class="card-product">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8f6zECjSewOjpI9yYn2fSlmOR-gRbba4IjQ&s" />
-  <div class="card-product-infos">
-    <h2><%= @restaurant.name  %></h2>
-    <p><%= @restaurant.address %></p>
-    <p><%= @restaurant.phone_number %></p>
-    <p><%= @restaurant.category %></p>
+<div class= "container my-3 p-3'>
+  <div class="card-product">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8f6zECjSewOjpI9yYn2fSlmOR-gRbba4IjQ&s" />
+    <div class="card-product-infos">
+      <h2>Restaurant: <%= @restaurant.name  %></h2>
+      <p>Address: <%= @restaurant.address %></p>
+      <p>Phone Number: <%= @restaurant.phone_number %></p>
+      <p>Category: <%= @restaurant.category %></p>
+    </div>
+    <%= link_to "Home", restaurants_path, class: 'btn btn-primary mx-3' %>
+    <%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: 'btn btn-primary mx-3' %>
+    <h3>Reviews</h3>
+    <% @restaurant.reviews.each do |review| %>
+      <ul>
+        <li><%= review.content%> <strong>Rating:</strong><%= review.rating %></li>
+      </ul>
+    <% end %>
   </div>
-</div>
-<%= link_to "Home", restaurants_path, class: 'btn btn-primary mx-3' %>
