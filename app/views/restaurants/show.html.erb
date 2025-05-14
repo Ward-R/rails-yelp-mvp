@@ -1,0 +1,10 @@
+<div class="card-product">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8f6zECjSewOjpI9yYn2fSlmOR-gRbba4IjQ&s" />
+  <div class="card-product-infos">
+    <h2><%= @restaurant.name  %></h2>
+    <p><%= @restaurant.address %></p>
+    <p><%= @restaurant.phone_number %></p>
+    <p><%= @restaurant.category %></p>
+  </div>
+</div>
+<%= link_to "Home", restaurants_path, class: 'btn btn-primary mx-3' %>

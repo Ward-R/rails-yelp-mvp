@@ -63,3 +63,4 @@ gem 'rails-controller-testing', group: [ :test ]
 # Custom gem additions
 gem 'simple_form'
 gem 'ostruct'
+gem 'faker'
